@@ -14,23 +14,35 @@ Otevřete příkazový řádek nebo PowerShell ve složce projektu.
 py -3.13 -m venv .venv
 ```
 
-### 3. Aktivace virtuálního prostředí
 
-PowerShell:
+### 3. Instalace knihoven
 ```bash
-.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
 ```
+## Když nejde nainstalovat requirements.txt
 
-Příkazový řádek:
-```bash
-.\.venv\Scripts\activate.bat
-```
+Pokud na některém počítači nefunguje příkaz:
 
-### 4. Instalace knihoven
 ```bash
 python -m pip install -r requirements.txt
 ```
 
+je možné zkusit nainstalovat hlavní knihovny postupně ručně:
+
+```bash
+python -m pip install flask==3.0.0
+python -m pip install tensorflow==2.19.0
+python -m pip install pillow==10.2.0
+python -m pip install numpy==1.26.4
+```
+
+Potom je možné zkusit aplikaci znovu spustit:
+
+```bash
+python app.py
+```
+
+Pokud by nešlo nainstalovat `tensorflow==2.19.0`, je potřeba zkontrolovat verzi Pythonu na daném počítači.
 ### 5. Kontrola modelů
 Ve složce `model` musí být tyto soubory:
 
