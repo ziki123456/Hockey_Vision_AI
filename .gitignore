@@ -8,7 +8,9 @@ __pycache__/
 *.pyo
 *.pyd
 
-
+# Flask uploady a docasne soubory
+uploads/*
+!uploads/.gitkeep
 
 # Jupyter a Colab
 .ipynb_checkpoints/
