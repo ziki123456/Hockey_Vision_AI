@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HockeyVision</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="page">
+        <div class="card">
+            <h1>HockeyVision</h1>
+            <p class="subtitle">
+                Nahraj obrázek a model nejdřív určí, jestli je na něm hokej.
+                Pokud ano, pokusí se určit i hokejovou situaci.
+            </p>
+
+            <form id="upload-form" class="upload-form">
+                <label for="image-input" class="upload-box">
+                    <span>Klikni sem a vyber obrázek</span>
+                    <input type="file" id="image-input" name="image" accept="image/*" required>
+                </label>
+
+                <div id="file-name" class="file-name">Zatím není vybraný žádný soubor.</div>
+
+                <div id="preview-wrapper" class="preview-wrapper hidden">
+                    <img id="image-preview" class="image-preview" src="" alt="Náhled obrázku">
+                </div>
+
+                <button type="submit" class="predict-button">Vyhodnotit obrázek</button>
+            </form>
+
+            <div id="loading" class="loading hidden">
+                Probíhá vyhodnocení obrázku...
+            </div>
+
+            <div id="result" class="result hidden">
+                <h2>Výsledek predikce</h2>
+                <p><strong>Finální výsledek:</strong> <span id="result-final">-</span></p>
+                <p><strong>Binární model:</strong> <span id="result-binary-class">-</span></p>
+                <p><strong>Jistota binárního modelu:</strong> <span id="result-binary-confidence">-</span> %</p>
+                <p><strong>Raw výstup binárního modelu:</strong> <span id="result-binary-raw">-</span></p>
+
+                <div id="situation-box" class="hidden">
+                    <p><strong>Určená situace:</strong> <span id="result-situation-class">-</span></p>
+                    <p><strong>Jistota situačního modelu:</strong> <span id="result-situation-confidence">-</span> %</p>
+                </div>
+            </div>
+
+            <div id="error-message" class="error hidden"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>

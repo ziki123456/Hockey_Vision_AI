@@ -1,0 +1,27 @@
+# Virtualni prostredi
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Flask uploady a docasne soubory
+uploads/
+!uploads/.gitkeep
+
+# Jupyter a Colab
+.ipynb_checkpoints/
+
+# Systemove soubory
+.DS_Store
+Thumbs.db
+
+# PyCharm
+.idea/
+
+# Zalohy modelu a dalsi lokalni velke soubory navic
+*.h5
+*.keras.bak
